@@ -1,18 +1,12 @@
 # -*- encoding : utf-8 -*-
 Rails.application.routes.draw do
-  get 'session/signin'
+  get 'signin' => 'session#signin'
+  get 'signup' => 'session#signup'
 
-  get 'session/signup'
-
-  get 'dashboard/index'
-
-  get 'welcome/index'
-
-  get 'welcome/about'
-
-  get 'welcome/jobs'
-
-  get 'welcome/media'
+  get 'dashboard' => "dashboard#index"
+  get 'about' => 'welcome#about'
+  get 'jobs' => 'welcome#jobs'
+  get 'media' => 'welcome#media'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
