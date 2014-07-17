@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  email: MyString
+  encrypted_password: MyString
+  last_login_at: 2014-07-17 18:13:35
+  last_login_ip: MyString
+  role: MyString
+  login: MyString
+
+two:
+  email: MyString
+  encrypted_password: MyString
+  last_login_at: 2014-07-17 18:13:35
+  last_login_ip: MyString
+  role: MyString
+  login: MyString
