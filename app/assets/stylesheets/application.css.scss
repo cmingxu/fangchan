@@ -17,3 +17,41 @@
  *= require_tree .
  *= require_self
  */
+
+ul.nav {
+  li.divider-vertical {
+    border-style:solid;
+    border-width:1px;
+    opacity:.5;
+    height:58px;
+    border-left-color:#111415;
+    border-right-color:#646668;
+  }
+}
+
+.fangchan-main{
+  margin-top: 100px;
+}
+
+
+#footer{
+  background-color: #f9f9f7;
+  a {
+    color: $gray;
+    text-decoration: none;
+    cursor: hand;
+    line-height: 2em; 
+  }
+  a:hover {
+    color: lighten(red, 30%);
+  }
+  a:visit {
+    color: black;
+  }
+
+  span{
+    padding-top: 60px;
+  }
+    
+}
+

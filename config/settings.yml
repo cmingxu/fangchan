@@ -1,0 +1,15 @@
+defaults: &defaults
+  title: ""
+  description: ""
+  keywords: ""
+  site_name: ""
+
+development:
+  <<: *defaults
+  neat_setting: 800
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
