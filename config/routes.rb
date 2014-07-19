@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   get 'signin' => 'session#signin'
   get 'signup' => 'session#signup'
 
+  post 'signin' => 'session#signin'
+  post 'signup' => 'session#signup'
+
   get 'dashboard' => "dashboard#index"
   get 'about' => 'welcome#about'
   get 'jobs' => 'welcome#jobs'

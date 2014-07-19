@@ -1,0 +1,28 @@
+.navbar.navbar-inverse.navbar-fixed-top
+  .navbar-header
+    %button.navbar-toggle{"data-toggle" => "collapse", "data-target" => ".navbar-collapse"}
+      %span.sr-only
+      %span.icon-bar
+      %span.icon-bar
+      %span.icon-bar
+
+    %a.navbar-brand{:href => "#"}= Setting.site_name
+  .navbar-collapse.collapse
+    %ul.nav.navbar-nav
+      %li.active
+        %a{:href => "/"} 首页
+
+      %li
+        %a{:href => "/tour"} 功能
+
+      %li
+        %a{:href => "/plan"} 付费
+
+
+    %ul.nav.navbar-nav.navbar-right
+      %li.divider-vertical.hidden-xs
+      %li
+        %a{:href => "/signin"} 登陆
+      %li
+        %a{:href => "/signup"} 注册
+

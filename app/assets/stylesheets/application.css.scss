@@ -18,6 +18,9 @@
  *= require_self
  */
 
+body{
+  background-color: #f9f9f7;
+}
 ul.nav {
   li.divider-vertical {
     border-style:solid;
@@ -29,13 +32,14 @@ ul.nav {
   }
 }
 
-.fangchan-main{
-  margin-top: 100px;
+.main-content{
+  margin-top: 60px;
 }
 
 
 #footer{
   background-color: #f9f9f7;
+  margin-top: 40px;
   a {
     color: $gray;
     text-decoration: none;
@@ -52,6 +56,44 @@ ul.nav {
   span{
     padding-top: 60px;
   }
-    
 }
 
+
+/*sign in & signup form */
+.sign_form{
+  border: 2px solid lighten($gray, 30%);
+  background-color: white;
+  padding-bottom: 20px;
+}
+
+/*resricted pages*/
+
+.restricted{
+  background-color: #393939;
+}
+
+.restricted-content{
+  background-color: #f9f9f7;
+}
+
+.dashbord-navbar{
+  line-height: 40px;
+  .bread {
+    font-size: 1.4em;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+      
+  .btn{
+    @include border-left-radius(2px);
+    @include border-right-radius(2px);
+    @include border-top-radius(2px);
+    @include border-bottom-radius(2px);
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 20px;
+    margin-top: 10px;
+  }
+    
+}
+      

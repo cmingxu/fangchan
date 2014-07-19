@@ -1,2 +1,69 @@
-%h1 Dashboard#index
-%p Find me in app/views/dashboard/index.html.haml
+.dashbord-left.col-md-9
+  .dashbord-navbar
+    .glyphicon.glyphicon-briefcase
+    %span.bread 工作台
+    .glyphicon.glyphicon-star
+    .glyphicon.glyphicon-lock
+
+
+    %button.btn.btn-default.pull-right
+      .glyphicon.glyphicon-step-forward
+
+    %button.btn.btn-default.pull-right
+      筛选
+      .glyphicon.glyphicon-arrow-down
+
+    %button.btn.btn-danger.pull-right
+      新建报表
+      .glyphicon.glyphicon-arrow-down
+
+
+  .clearfix
+  %hr
+
+  .dashbord-display
+    .dashbord-statistics.col-md-4
+      %ul.list-group
+        %li.list-group-item.disabled
+          统计
+
+        %li.list-group-item
+          本日小定
+          %span.pull-right
+            %strong 14
+            万元
+        %li.list-group-item
+          %span.badge 14
+          本日退订
+        %li.list-group-item
+          %span.badge 14
+          本日签约
+        %li.list-group-item
+          %span.badge 14
+          签约面积
+        %li.list-group-item
+          %span.badge 14
+          签约金额
+        %li.list-group-item
+          %span.badge 14
+          总售户数
+        %li.list-group-item
+          %span.badge 14
+          总售面积
+        %li.list-group-item
+          %span.badge 14
+          预计均价
+        %li.list-group-item
+          %span.badge 14
+          总销售额 
+
+    .dashbord-charts.panel.panel-default.col-md-8
+      .panel-body
+        .dashbord-charts-header
+          %h4 日报 2014年7月7日  晴35'C
+
+        .dashbord-charts-data
+        .dashbord-charts-pie
+        .dashbord-charts-stack
+
+.dashbord-right.col-md-1
