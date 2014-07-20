@@ -61,9 +61,19 @@
       .panel-body
         .dashbord-charts-header
           %h4 日报 2014年7月7日  晴35'C
+          %hr
 
         .dashbord-charts-data
+          = render :partial => "dashboard_data"
+          %hr
+
         .dashbord-charts-pie
+          = render :partial => "dashboard_pie_charts"
+          %hr
+
+
         .dashbord-charts-stack
+          = render :partial => "dashboard_stacked_charts"
+          %hr
 
 .dashbord-right.col-md-1
