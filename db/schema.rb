@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140717101335) do
+ActiveRecord::Schema.define(version: 20140722080115) do
+
+  create_table "apps", force: true do |t|
+    t.string   "name"
+    t.integer  "hushu"
+    t.integer  "mianji"
+    t.integer  "junjia"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "logs", force: true do |t|
+    t.date     "log_date"
+    t.integer  "tuiding"
+    t.integer  "qianyue"
+    t.integer  "qianyue_mianji"
+    t.integer  "qianyue_jine"
+    t.integer  "user_id"
+    t.integer  "application_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email"
@@ -20,6 +41,7 @@ ActiveRecord::Schema.define(version: 20140717101335) do
     t.string   "last_login_ip"
     t.string   "role"
     t.string   "login"
+    t.string   "application_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

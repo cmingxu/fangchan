@@ -97,3 +97,34 @@ ul.nav {
     
 }
       
+#pie_charts{
+  #count_charts{
+    height: 200px; 
+  }
+
+  #area_charts{
+    height: 200px; 
+  }
+
+  #money_charts{
+    height: 200px; 
+  }
+}
+
+#stacked_charts{
+  #column_charts{
+    height: 200px;
+  }
+}
+
+.btn_submit{
+  @include border-left-radius(2px);
+  @include border-right-radius(2px);
+  @include border-top-radius(2px);
+  @include border-bottom-radius(2px);
+  padding-left: 120px;
+  padding-right: 120px;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+}

@@ -1,12 +1,9 @@
 %ul.nav.nav-pills.nav-stacked
-  %li.active
+  %li{:class => tab_class('/dashboard')}
     %a{:href => "/dashboard"} 工作台
 
-  %li
-    %a{:href => "/clients"} 客户管理
+  %li{:class => tab_class('/sms')}
+    %a{:href => "/sms"} 短信发送
 
-  %li
-    %a{:href => "/clients"} 员工管理
-
-  %li
-    %a{:href => "/clients"} 系统设置
+  %li{:class => tab_class('/app/settings')}
+    %a{:href => "/app/settings"} 系统设置

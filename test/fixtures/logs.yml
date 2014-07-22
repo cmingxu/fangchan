@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  log_date: 2014-07-22
+  tuiding: 1
+  qianyue: 1
+  qianyue_mianji: 1
+  qianyue_jine: 1
+
+two:
+  log_date: 2014-07-22
+  tuiding: 1
+  qianyue: 1
+  qianyue_mianji: 1
+  qianyue_jine: 1

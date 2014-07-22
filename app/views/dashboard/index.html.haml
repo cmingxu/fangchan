@@ -1,23 +1,5 @@
-.dashbord-left.col-md-9
-  .dashbord-navbar
-    .glyphicon.glyphicon-briefcase
-    %span.bread 工作台
-    .glyphicon.glyphicon-star
-    .glyphicon.glyphicon-lock
-
-
-    %button.btn.btn-default.pull-right
-      .glyphicon.glyphicon-step-forward
-
-    %button.btn.btn-default.pull-right
-      筛选
-      .glyphicon.glyphicon-arrow-down
-
-    %button.btn.btn-danger.pull-right
-      新建报表
-      .glyphicon.glyphicon-arrow-down
-
-
+.dashbord-left.col-md-11
+  = render :partial => "dashboard_nav"
   .clearfix
   %hr
 

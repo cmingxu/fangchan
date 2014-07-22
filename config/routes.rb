@@ -1,5 +1,7 @@
 # -*- encoding : utf-8 -*-
 Rails.application.routes.draw do
+  get 'app/settings' => "app#settings"
+
   get 'signin' => 'session#signin'
   get 'signup' => 'session#signup'
 

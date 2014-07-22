@@ -1,0 +1,2 @@
+module Restricted::ApplicationHelper
+end
