@@ -1,0 +1,30 @@
+.dashbord-left.col-md-11
+  = render :partial => "dashboard/dashboard_nav"
+  .clearfix
+  %hr
+  .row
+    .col-md-6.setting_form.text-center
+      = form_tag logs_path, :role => "form"  do |f|
+        %dl.dl-horizontal
+          %dt 本日小定:
+          %dd= text_field_tag "app[hushu]", '', :placeholder => "总户数", :class => "form-control"
+  
+        %dl.dl-horizontal
+          %dt 本日退定:
+          %dd= text_field_tag "app[mianji]", '', :placeholder => "总面积", :class => "form-control"
+  
+        %dl.dl-horizontal
+          %dt 本日签约:
+          %dd= text_field_tag "app[junjia]", "", :placeholder => "预计均价", :class => "form-control"
+
+        %dl.dl-horizontal
+          %dt 签约面积:
+          %dd= text_field_tag "app[junjia]", "", :placeholder => "预计均价", :class => "form-control"
+
+        %dl.dl-horizontal
+          %dt 签约金额:
+          %dd= text_field_tag "app[junjia]", "", :placeholder => "预计均价", :class => "form-control"
+
+        %hr
+        = submit_tag "确认", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"
+

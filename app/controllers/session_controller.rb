@@ -2,6 +2,7 @@
 class SessionController < ApplicationController
   def signin
     if request.get?
+      @user = User.new
     else
     end
   end

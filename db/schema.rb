@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140722080115) do
+ActiveRecord::Schema.define(version: 20140723133529) do
 
   create_table "apps", force: true do |t|
     t.string   "name"
@@ -34,6 +34,16 @@ ActiveRecord::Schema.define(version: 20140722080115) do
     t.datetime "updated_at"
   end
 
+  create_table "sms", force: true do |t|
+    t.text     "content"
+    t.text     "mobile_num"
+    t.integer  "user_id"
+    t.integer  "log_id"
+    t.integer  "app_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", force: true do |t|
     t.string   "email"
     t.string   "encrypted_password"
@@ -41,7 +51,6 @@ ActiveRecord::Schema.define(version: 20140722080115) do
     t.string   "last_login_ip"
     t.string   "role"
     t.string   "login"
-    t.string   "application_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

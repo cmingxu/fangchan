@@ -1,6 +1,6 @@
 # -*- encoding : utf-8 -*-
 class RestrictedController < ApplicationController
-  before_filter :login_required
+  #before_filter :login_required
   layout "restricted"
 
   def login_required

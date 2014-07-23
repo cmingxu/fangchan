@@ -1,5 +1,9 @@
 # -*- encoding : utf-8 -*-
 Rails.application.routes.draw do
+
+  resources :logs, :only => [:new, :create]
+  resources :smses, :only => [:new, :create]
+
   get 'app/settings' => "app#settings"
 
   get 'signin' => 'session#signin'

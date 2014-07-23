@@ -6,13 +6,14 @@
 
 
   %button.btn.btn-default.pull-right
-    .glyphicon.glyphicon-step-forward
+    .glyphicon.glyphicon-wrench
 
-  %button.btn.btn-default.pull-right
-    筛选
-    .glyphicon.glyphicon-arrow-down
+  %a.btn.btn-default.pull-right{:href => new_smse_path}
+    短信汇报
+    
+    .glyphicon.glyphicon-send
 
-  %button.btn.btn-danger.pull-right
+  %a.btn.btn-danger.pull-right{:href => new_log_path}
     新建报表
     .glyphicon.glyphicon-arrow-down
 

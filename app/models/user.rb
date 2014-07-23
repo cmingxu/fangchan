@@ -7,6 +7,9 @@ class User < ActiveRecord::Base
   validates :password, :length => { :in => 6..20, :message => "密码只要要6位以上"}
   validates :email, :format => { :with => EMAIL_REG }, :allow_blank => true
 
+  has_many :logs
+  belongs_to :app
+
   def password_valid?(pass)
     self.encrypted_password = self.class.encrypt_password(pass)
   end

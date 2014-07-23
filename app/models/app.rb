@@ -1,3 +1,8 @@
 class App < ActiveRecord::Base
+  has_many :logs
+  has_many :users
+
+  scope :today_log, lambda {  where(["log_date = ?", Date.today]).first }
+  scope :latest_log, lambda {  order("log_date DESC").limit(1) }
 
 end

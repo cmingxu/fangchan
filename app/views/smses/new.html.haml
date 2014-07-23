@@ -1,0 +1,18 @@
+.dashbord-left.col-md-11
+  = render :partial => "dashboard/dashboard_nav"
+  .clearfix
+  %hr
+  .row
+    .col-md-6.setting_form.text-center
+      = form_tag smses_path, :role => "form"  do |f|
+        %dl.dl-horizontal
+          %dt 短信内容:
+          %dd= text_area_tag "app[hushu]", '领导， 今日小定3套， 签约4套， 销售面积300平米，销售额275万.', :placeholder => "总户数", :class => "form-control"
+  
+        %dl.dl-horizontal
+          %dt 接收人(用，分割):
+          %dd= text_area_tag "app[mianji]", '13699236168, 13734863639', :placeholder => "总面积", :class => "form-control"
+  
+        %hr
+        = submit_tag "发送短信息", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"
+

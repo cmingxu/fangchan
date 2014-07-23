@@ -1,2 +1,19 @@
-%h1 Session#signin
-%p Find me in app/views/session/signin.html.haml
+.main-content
+  .container
+    .row
+      .col-md-6.col-md-offset-3.sign_form.text-center
+        %h2 注册新用户
+        %hr
+        = form_tag signup_path, :role => "form"  do |f|
+          %dl.dl-horizontal
+            %dt 登陆名:
+            %dd= text_field_tag "user[login]", @user.login, :placeholder => "由字母，数字和下划线组成", :class => "form-control"
+  
+          %dl.dl-horizontal
+            %dt 密码:
+            %dd= text_field_tag "user[password]", @user.password, :placeholder => "密码， 最少不能短于6位", :class => "form-control"
+
+
+          %hr
+          = submit_tag "确认注册", :class => "btn btn-success btn-lg", :id => "submit_btn"
+
