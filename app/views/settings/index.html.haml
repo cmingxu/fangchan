@@ -1,0 +1,39 @@
+.dashbord-left.col-md-11
+  = render :partial => "dashboard/dashboard_nav"
+  .clearfix
+  %hr
+
+  .row
+    .col-md-12.setting_form.text-center
+      = form_tag settings_path, :role => "form"  do |f|
+        %dl.dl-horizontal
+          %dt 新密码:
+          %dd= text_field_tag "app[hushu]", '', :placeholder => "总户数", :class => "form-control"
+  
+        %dl.dl-horizontal
+          %dt 密码确认:
+          %dd= text_field_tag "app[mianji]", '', :placeholder => "总面积", :class => "form-control"
+  
+        = submit_tag "确认", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"
+        %hr
+
+
+  .row
+    .col-md-12.setting_form.text-center
+      = form_tag settings_path, :role => "form"  do |f|
+        %dl.dl-horizontal
+          %dt 姓名:
+          %dd= text_field_tag "app[hushu]", '', :placeholder => "总户数", :class => "form-control"
+  
+        = submit_tag "确认", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"
+        %hr
+
+  .row
+    .col-md-12.setting_form.text-center
+      = form_tag settings_path, :role => "form"  do |f|
+        %dl.dl-horizontal
+          %dt 头像:
+          %dd= text_field_tag "app[hushu]", '', :placeholder => "总户数", :class => "form-control"
+  
+        = submit_tag "确认", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"
+        %hr

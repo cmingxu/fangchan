@@ -3,25 +3,108 @@
   .clearfix
   %hr
   .row
-    .col-md-6.setting_form.text-center
-      = form_tag app_settings_path, :role => "form"  do |f|
-        %dl.dl-horizontal
-          %dt 总售户数:
-          %dd= text_field_tag "app[hushu]", '', :placeholder => "总户数", :class => "form-control"
-  
-        %dl.dl-horizontal
-          %dt 总售面积:
-          %dd= text_field_tag "app[mianji]", '', :placeholder => "总面积", :class => "form-control"
-  
-        %dl.dl-horizontal
-          %dt 预计均价:
-          %dd= text_field_tag "app[junjia]", "", :placeholder => "预计均价", :class => "form-control"
+    %ul.nav.nav-tabs{:role => "tablist"}
+      %li.active
+        %a{"href" => "#loupan", "role" => "tab", "data-toggle" => "tab"} 楼盘
 
-        %dl.dl-horizontal
-          %dt 预计总价:
-          %dd#total_money
+      %li
+        %a{"href" => "#staff", "role" => "tab", "data-toggle" => "tab"} 人员
+
+    .tab-content
+      .tab-pane.active#loupan
+        .col-md-12
+          %table.table.table-condensed.table-striped
+            %thead
+              %tr
+                %th
+                %th 总套数
+                %th 总面积
+                %th 预计单价
+                %th 预计总额
+
+            %tbody
+              %tr
+                %td 万科城
+                %td 100
+                %td 10000
+                %td 2000000
+                %td 2000000
+
+              %tr
+                %td 万科城
+                %td 100
+                %td 10000
+                %td 2000000
+                %td 2000000
+
+              %tr
+                %td 万科城
+                %td 100
+                %td 10000
+                %td 2000000
+                %td 2000000
+          %hr
+          .setting_form.text-center
+            = form_tag app_settings_path, :role => "form"  do |f|
+              %dl.dl-horizontal
+                %dt 楼盘名称:
+                %dd= text_field_tag "app[name]", '', :placeholder => "楼盘名称", :class => "form-control"
+
+              %dl.dl-horizontal
+                %dt 总售户数:
+                %dd= text_field_tag "app[hushu]", '', :placeholder => "总户数", :class => "form-control"
+              %dl.dl-horizontal
+                %dt 总售面积:
+                %dd= text_field_tag "app[mianji]", '', :placeholder => "总面积", :class => "form-control"
+              %dl.dl-horizontal
+                %dt 预计均价:
+                %dd= text_field_tag "app[junjia]", "", :placeholder => "预计均价", :class => "form-control"
+
+              %dl.dl-horizontal
+                %dt 预计总价:
+                %dd#total_money
+              %hr
+              = submit_tag "确认", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"
+
+      .tab-pane#staff
+        .col-md-12
+          %table.table.table-condensed.table-striped
+            %thead
+              %tr
+                %th
+                %th 登陆名
+                %th 姓名
+
+            %tbody
+              %tr
+                %td 万科城
+                %td 2000000
+                %td 2000000
+
+              %tr
+                %td 万科城
+                %td 100
+                %td 10000
+              %tr
+                %td 万科城
+                %td 100
+                %td 10000
+          %hr
+          .setting_form.text-center
+            = form_tag app_settings_path, :role => "form"  do |f|
+              %dl.dl-horizontal
+                %dt 登陆名:
+                %dd= text_field_tag "app[name]", '', :placeholder => "楼盘名称", :class => "form-control"
+
+              %dl.dl-horizontal
+                %dt 密码:
+                %dd= text_field_tag "app[hushu]", '', :placeholder => "总户数", :class => "form-control"
+  
+              %dl.dl-horizontal
+                %dt 姓名:
+                %dd= text_field_tag "app[mianji]", '', :placeholder => "总面积", :class => "form-control"
   
   
   
-        %hr
-        = submit_tag "确认", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"
+              %hr
+              = submit_tag "确认", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"

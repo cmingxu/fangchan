@@ -8,7 +8,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_login_ip
       t.string :role
       t.string :login
-      t.string :application_id
+      t.integer :client_id
 
       t.timestamps
     end

@@ -20,6 +20,18 @@
 
 
     %ul.nav.navbar-nav.navbar-right
+      %li.dropdown
+        %a.dropdown-toggle{"data-toggle" => "dropdown"}
+          万科城
+          %span.caret
+
+        %ul.dropdown-menu{"role" => "menu"}
+          %li
+            %a 绿地城
+
+          %li
+            %a 美林城
+
       %li.divider-vertical.hidden-xs
       %li
         %a{:href => "/signin"} 登陆

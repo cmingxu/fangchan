@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateSms < ActiveRecord::Migration
   def change
     create_table :sms do |t|
@@ -6,6 +7,7 @@ class CreateSms < ActiveRecord::Migration
       t.integer :user_id
       t.integer :log_id
       t.integer :app_id
+      t.integer :client_id
 
       t.timestamps
     end

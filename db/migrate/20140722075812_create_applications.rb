@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateApplications < ActiveRecord::Migration
   def change
     create_table :apps do |t|
@@ -5,6 +6,7 @@ class CreateApplications < ActiveRecord::Migration
       t.integer :hushu
       t.integer :mianji
       t.integer :junjia
+      t.integer :client_id
 
       t.timestamps
     end

@@ -1,3 +1,4 @@
+# -*- encoding : utf-8 -*-
 class CreateLogs < ActiveRecord::Migration
   def change
     create_table :logs do |t|
@@ -7,7 +8,8 @@ class CreateLogs < ActiveRecord::Migration
       t.integer :qianyue_mianji
       t.integer :qianyue_jine
       t.integer :user_id
-      t.integer :application_id
+      t.integer :client_id
+      t.integer :app_id
 
       t.timestamps
     end

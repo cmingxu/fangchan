@@ -1,6 +1,8 @@
 # -*- encoding : utf-8 -*-
 Rails.application.routes.draw do
 
+  get 'settings' => "settings#index"
+
   resources :logs, :only => [:new, :create]
   resources :smses, :only => [:new, :create]
 

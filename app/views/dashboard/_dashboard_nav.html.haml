@@ -1,8 +1,6 @@
 .dashbord-navbar
   .glyphicon.glyphicon-briefcase
-  %span.bread 工作台
-  .glyphicon.glyphicon-star
-  .glyphicon.glyphicon-lock
+  %span.bread= @breadcrumb || "woo"
 
 
   %button.btn.btn-default.pull-right
