@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   validates :password, :length => { :in => 6..20, :message => "密码只要要6位以上"}
   validate :password_confirmation_same_as_password
   validates :email, :format => { :with => EMAIL_REG }, :allow_blank => true
-  validates :email, :uniqueness => { :message => "Email已存在， 请换一个Email地址" }
+  #validates :email, :uniqueness => { :message => "Email已存在， 请换一个Email地址" }
   validates :login, :uniqueness => { :message => "登陆名已存在， 请更换" }
 
 

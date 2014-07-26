@@ -18,12 +18,19 @@ class ApplicationController < ActionController::Base
     @client ||= current_user.client
   end
 
-
   def current_app
     return @current_app if @current_app
     current_client.apps.find_by_id(session[:app_id]) || current_client.apps.first
   end
 
-  helper_method :current_user, :tab_class, :current_client, :current_app
+  def current_log
+    current_app.latest_log
+  end
+
+  def current_setting_tag_active(tab)
+    (@setting_tag || params[:setting_tag] || "app") == tab ? "active" : ""
+  end
+
+  helper_method :current_user, :tab_class, :current_client, :current_app, :current_setting_tag_active, :current_log
 end
 

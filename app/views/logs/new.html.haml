@@ -4,27 +4,36 @@
   %hr
   .row
     .col-md-6.setting_form.text-center
-      = form_tag logs_path, :role => "form"  do |f|
+      = form_for @log, :role => "form"  do |f|
         %dl.dl-horizontal
           %dt 本日小定:
-          %dd= text_field_tag "app[hushu]", '', :placeholder => "总户数", :class => "form-control"
+          %dd= f.text_field "xiaoding", :placeholder => "小定", :class => "form-control"
   
         %dl.dl-horizontal
           %dt 本日退定:
-          %dd= text_field_tag "app[mianji]", '', :placeholder => "总面积", :class => "form-control"
+          %dd= f.text_field "tuiding",  :placeholder => "退订", :class => "form-control"
   
         %dl.dl-horizontal
           %dt 本日签约:
-          %dd= text_field_tag "app[junjia]", "", :placeholder => "预计均价", :class => "form-control"
+          %dd= f.text_field "qianyue", :placeholder => "签约", :class => "form-control"
 
         %dl.dl-horizontal
           %dt 签约面积:
-          %dd= text_field_tag "app[junjia]", "", :placeholder => "预计均价", :class => "form-control"
+          %dd= f.text_field "qianyue_mianji", :placeholder => "签约面积", :class => "form-control"
 
         %dl.dl-horizontal
           %dt 签约金额:
-          %dd= text_field_tag "app[junjia]", "", :placeholder => "预计均价", :class => "form-control"
+          %dd= f.text_field "qianyue_jine", :placeholder => "签约金额", :class => "form-control"
 
+        %dl.dl-horizontal
+          %dt
+          %dd
+            - if request.post? && @log.errors.present?
+              .alert.alert-danger.text-left{:role => "alert"}
+                - @log.errors.values.map(&:first).flatten.each do |m|
+                  = m
+                  %br
+        
         %hr
         = submit_tag "确认", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"
 

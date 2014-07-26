@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140724140604) do
 
   create_table "logs", force: true do |t|
     t.date     "log_date"
+    t.integer  "xiaoding"
     t.integer  "tuiding"
     t.integer  "qianyue"
     t.integer  "qianyue_mianji"
@@ -61,6 +62,8 @@ ActiveRecord::Schema.define(version: 20140724140604) do
     t.string   "last_login_ip"
     t.string   "role"
     t.string   "login"
+    t.string   "name"
+    t.string   "tel"
     t.integer  "client_id"
     t.datetime "created_at"
     t.datetime "updated_at"

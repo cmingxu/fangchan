@@ -4,14 +4,14 @@
   %hr
   .row
     %ul.nav.nav-tabs{:role => "tablist"}
-      %li.active
+      %li{:class => current_setting_tag_active("app")}
         %a{"href" => "#loupan", "role" => "tab", "data-toggle" => "tab"} 楼盘
 
-      %li
+      %li{:class => current_setting_tag_active("user")}
         %a{"href" => "#staff", "role" => "tab", "data-toggle" => "tab"} 人员
 
     .tab-content
-      .tab-pane.active#loupan
+      .tab-pane#loupan{:class => current_setting_tag_active("app")}
         .col-md-12
           %table.table.table-condensed.table-striped
             %thead
@@ -29,11 +29,11 @@
                   %td= app.hushu
                   %td= app.mianji
                   %td= app.junjia
-                  %td= app.zongjia
+                  %td= app.zongjia.in_human_readable_money
 
           %hr
           .setting_form.text-center
-            = form_tag app_settings_path, :role => "form"  do |f|
+            = form_tag apps_path, :role => "form"  do |f|
               %dl.dl-horizontal
                 %dt 楼盘名称:
                 %dd= text_field_tag "app[name]", '', :placeholder => "楼盘名称", :class => "form-control"
@@ -51,38 +51,59 @@
               %dl.dl-horizontal
                 %dt 预计总价:
                 %dd#total_money
+
+              %dl.dl-horizontal
+                %dt
+                %dd
+                  - if flash[:notice].present?
+                    .alert.alert-danger.text-left{:role => "alert"}
+                      = flash[:notice]
               %hr
               = submit_tag "确认", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"
 
-      .tab-pane#staff
+      .tab-pane#staff{:class => current_setting_tag_active("user")}
         .col-md-12
           %table.table.table-condensed.table-striped
             %thead
               %tr
                 %th 登陆名
                 %th 姓名
+                %th 手机号
+                %th Email
 
             %tbody
               - current_client.users.each do |user|
                 %tr
                   %td= user.login
+                  %td= user.name
+                  %td= user.tel
                   %td= user.email
           %hr
           .setting_form.text-center
-            = form_tag app_settings_path, :role => "form"  do |f|
+            = form_tag users_path, :role => "form"  do
+              =hidden_field_tag :app_id, current_app.id
               %dl.dl-horizontal
                 %dt 登陆名:
-                %dd= text_field_tag "app[name]", '', :placeholder => "楼盘名称", :class => "form-control"
+                %dd= text_field_tag "user[login]", '', :placeholder => "登陆名", :class => "form-control"
 
               %dl.dl-horizontal
                 %dt 密码:
-                %dd= text_field_tag "app[hushu]", '', :placeholder => "总户数", :class => "form-control"
+                %dd= password_field_tag "user[password]", '', :placeholder => "密码", :class => "form-control"
   
               %dl.dl-horizontal
                 %dt 姓名:
-                %dd= text_field_tag "app[mianji]", '', :placeholder => "总面积", :class => "form-control"
+                %dd= text_field_tag "user[name]", '', :placeholder => "姓名", :class => "form-control"
+
+              %dl.dl-horizontal
+                %dt 手机号
+                %dd= text_field_tag "user[tel]", '', :placeholder => "13699236168", :class => "form-control"
   
-  
-  
+              %dl.dl-horizontal
+                %dt
+                %dd
+                  - if flash[:notice].present?
+                    .alert.alert-danger.text-left{:role => "alert"}
+                      = flash[:notice]
+              
               %hr
               = submit_tag "确认", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"

@@ -12,31 +12,31 @@
         %li.list-group-item
           本日小定
           %span.pull-right
-            %strong 14
+            %strong= current_log.xiaoding
             万元
         %li.list-group-item
-          %span.badge 14
+          %span.badge= current_log.tuiding 
           本日退订
         %li.list-group-item
-          %span.badge 14
+          %span.badge= current_log.qianyue
           本日签约
         %li.list-group-item
-          %span.badge 14
+          %span.badge= current_log.qianyue_mianji 
           签约面积
         %li.list-group-item
-          %span.badge 14
+          %span.badge= current_log.qianyue_jine 
           签约金额
         %li.list-group-item
-          %span.badge 14
+          %span.badge= current_app.hushu 
           总售户数
         %li.list-group-item
-          %span.badge 14
+          %span.badge= current_app.mianji
           总售面积
         %li.list-group-item
-          %span.badge 14
+          %span.badge= current_app.junjia
           预计均价
         %li.list-group-item
-          %span.badge 14
+          %span.badge= current_app.zongjia.in_human_readable_money
           总销售额 
 
     .dashbord-charts.panel.panel-default.col-md-9

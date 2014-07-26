@@ -8,6 +8,8 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_login_ip
       t.string :role
       t.string :login
+      t.string :name
+      t.string :tel
       t.integer :client_id
 
       t.timestamps

@@ -3,12 +3,12 @@
   %span.bread= @breadcrumb || "woo"
 
 
-  %button.btn.btn-default.pull-right
+  %a.btn.btn-default.pull-right{:href => app_settings_path}
+    系统设置
     .glyphicon.glyphicon-wrench
 
   %a.btn.btn-default.pull-right{:href => new_smse_path}
     短信汇报
-    
     .glyphicon.glyphicon-send
 
   %a.btn.btn-danger.pull-right{:href => new_log_path}

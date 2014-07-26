@@ -5,8 +5,14 @@ Rails.application.routes.draw do
 
   resources :logs, :only => [:new, :create]
   resources :smses, :only => [:new, :create]
+  resources :users, :only => [:create, :update]
+  resources :apps, :only => [:create, :update] do
+    member do
+      put :switch
+    end
+  end
 
-  get 'app/settings' => "app#settings"
+  get 'app/settings' => "apps#settings"
 
   get 'signin' => 'session#signin'
   get 'signup' => 'session#signup'
