@@ -1,9 +1,12 @@
 # -*- encoding : utf-8 -*-
 class RestrictedController < ApplicationController
-  #before_filter :login_required
   layout "restricted"
+  before_filter :login_required
 
   def login_required
-    redirect_to root_path, notice: "登陆后访问"
+    unless current_user
+      redirect_to root_path, notice: "登陆后访问"
+      return false
+    end
   end
 end

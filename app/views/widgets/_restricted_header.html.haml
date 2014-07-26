@@ -22,19 +22,16 @@
     %ul.nav.navbar-nav.navbar-right
       %li.dropdown
         %a.dropdown-toggle{"data-toggle" => "dropdown"}
-          万科城
+          = current_app.name
           %span.caret
 
         %ul.dropdown-menu{"role" => "menu"}
-          %li
-            %a 绿地城
+          - current_client.apps.each do |app|
+            %li
+              = link_to app.name, switch_app_path(app), :method => :put
 
-          %li
-            %a 美林城
 
       %li.divider-vertical.hidden-xs
       %li
-        %a{:href => "/signin"} 登陆
-      %li
-        %a{:href => "/signup"} 注册
+        = link_to "退出", sign_out_path, :method => :delete
 

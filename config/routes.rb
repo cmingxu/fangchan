@@ -10,14 +10,16 @@ Rails.application.routes.draw do
 
   get 'signin' => 'session#signin'
   get 'signup' => 'session#signup'
-
   post 'signin' => 'session#signin'
   post 'signup' => 'session#signup'
+  delete 'sign_out' => 'session#sign_out'
 
   get 'dashboard' => "dashboard#index"
   get 'about' => 'welcome#about'
   get 'jobs' => 'welcome#jobs'
   get 'media' => 'welcome#media'
+
+  put 'switch_app' => "app#switch_app"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

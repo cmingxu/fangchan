@@ -6,3 +6,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+#
+
+
+client = Client.new :name => "西安xx房地产公司", :tel => "010-12344321"
+client.apps.build :name => "项目名称", :hushu => 100, :mianji => 100 * 100, :junjia => 8000
+client.users.build :login => "admin", :password => "abcdef", :password_confirmation => "abcdef", :email => "test@test.com"
+
+client.save

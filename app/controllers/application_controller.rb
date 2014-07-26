@@ -14,6 +14,16 @@ class ApplicationController < ActionController::Base
     current_tab == link ? "active" : ""
   end
 
-  helper_method :current_user, :tab_class
+  def current_client
+    @client ||= current_user.client
+  end
+
+
+  def current_app
+    return @current_app if @current_app
+    current_client.apps.find_by_id(session[:app_id]) || current_client.apps.first
+  end
+
+  helper_method :current_user, :tab_class, :current_client, :current_app
 end
 

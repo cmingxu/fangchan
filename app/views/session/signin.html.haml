@@ -4,15 +4,25 @@
       .col-md-6.col-md-offset-3.sign_form.text-center
         %h2 注册新用户
         %hr
-        = form_tag signup_path, :role => "form"  do |f|
+        = form_tag signin_path, :role => "form"  do |f|
           %dl.dl-horizontal
             %dt 登陆名:
-            %dd= text_field_tag "user[login]", @user.login, :placeholder => "由字母，数字和下划线组成", :class => "form-control"
+            %dd= text_field_tag "user[login]", "", :placeholder => "由字母，数字和下划线组成", :class => "form-control"
   
           %dl.dl-horizontal
             %dt 密码:
-            %dd= text_field_tag "user[password]", @user.password, :placeholder => "密码， 最少不能短于6位", :class => "form-control"
+            %dd= password_field_tag "user[password]", "", :placeholder => "密码， 最少不能短于6位", :class => "form-control"
 
+          %dl.dl-horizontal
+            %dt
+            %dd
+              - if @errors.present?
+                .alert.alert-danger.text-left{:role => "alert"}
+                  - @errors.each do |m|
+                    = m
+                    %br
+          
+          %hr
 
           %hr
           = submit_tag "确认注册", :class => "btn btn-success btn-lg", :id => "submit_btn"

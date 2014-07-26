@@ -23,26 +23,14 @@
                 %th 预计总额
 
             %tbody
-              %tr
-                %td 万科城
-                %td 100
-                %td 10000
-                %td 2000000
-                %td 2000000
+              - current_client.apps.each do |app|
+                %tr
+                  %td= app.name
+                  %td= app.hushu
+                  %td= app.mianji
+                  %td= app.junjia
+                  %td= app.zongjia
 
-              %tr
-                %td 万科城
-                %td 100
-                %td 10000
-                %td 2000000
-                %td 2000000
-
-              %tr
-                %td 万科城
-                %td 100
-                %td 10000
-                %td 2000000
-                %td 2000000
           %hr
           .setting_form.text-center
             = form_tag app_settings_path, :role => "form"  do |f|
@@ -71,24 +59,14 @@
           %table.table.table-condensed.table-striped
             %thead
               %tr
-                %th
                 %th 登陆名
                 %th 姓名
 
             %tbody
-              %tr
-                %td 万科城
-                %td 2000000
-                %td 2000000
-
-              %tr
-                %td 万科城
-                %td 100
-                %td 10000
-              %tr
-                %td 万科城
-                %td 100
-                %td 10000
+              - current_client.users.each do |user|
+                %tr
+                  %td= user.login
+                  %td= user.email
           %hr
           .setting_form.text-center
             = form_tag app_settings_path, :role => "form"  do |f|

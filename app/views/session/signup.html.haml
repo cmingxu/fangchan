@@ -11,13 +11,21 @@
   
           %dl.dl-horizontal
             %dt 密码:
-            %dd= text_field_tag "user[password]", @user.password, :placeholder => "密码， 最少不能短于6位", :class => "form-control"
+            %dd= password_field_tag "user[password]", @user.password, :placeholder => "密码， 最少不能短于6位", :class => "form-control"
 
           %dl.dl-horizontal
             %dt 密码确认:
-            %dd= text_field_tag "password_confirmation", "", :placeholder => "再次输入确认密码， 和密码一致", :class => "form-control"
+            %dd= password_field_tag "user[password_confirmation]", "", :placeholder => "再次输入确认密码， 和密码一致", :class => "form-control"
 
 
-
+          %dl.dl-horizontal
+            %dt
+            %dd
+              - if request.post? && @user.errors.present?
+                .alert.alert-danger.text-left{:role => "alert"}
+                  - @user.errors.values.flatten.each do |m|
+                    = m
+                    %br
+          
           %hr
           = submit_tag "确认注册", :class => "btn btn-success btn-lg", :id => "submit_btn"
