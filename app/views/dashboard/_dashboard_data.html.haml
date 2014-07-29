@@ -3,7 +3,7 @@
     %tr
       %td 本日销售
       %td 
-        %strong= current_log.xiaoding
+        %strong= current_log.try(:xiaoding, 0)
         套
 
     %tr

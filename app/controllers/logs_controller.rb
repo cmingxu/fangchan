@@ -1,6 +1,7 @@
 # -*- encoding : utf-8 -*-
 class LogsController < RestrictedController
   def new
+    @log = Log.new
   end
 
   def create
