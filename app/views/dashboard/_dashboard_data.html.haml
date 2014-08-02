@@ -59,7 +59,7 @@
     %tr
       %td 本日均价
       %td 
-        %strong= current_log.avg_jine.in_human_readable_money
+        %strong= (current_log.try(:avg_jine) || 0).in_human_readable_money
         元
 
     %tr
