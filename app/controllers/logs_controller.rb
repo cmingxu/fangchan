@@ -1,5 +1,9 @@
 # -*- encoding : utf-8 -*-
 class LogsController < RestrictedController
+  before_filter do
+    @breadcrumb = "新建报表"
+  end
+
   def new
     @log = Log.new
   end

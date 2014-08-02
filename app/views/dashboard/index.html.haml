@@ -12,19 +12,19 @@
         %li.list-group-item
           本日小定
           %span.pull-right
-            %strong= current_log.try(:xiaoding, 0)
+            %strong= current_log.try(:xiaoding) || 0
             万元
         %li.list-group-item
-          %span.badge= current_log.try(:tuiding, 0) 
+          %span.badge= current_log.try(:tuiding) || 0 
           本日退订
         %li.list-group-item
-          %span.badge= current_log.try(:qianyue, 0)
+          %span.badge= current_log.try(:qianyue) || 0
           本日签约
         %li.list-group-item
-          %span.badge= current_log.try(:qianyue_mianji , 0)
+          %span.badge= current_log.try(:qianyue_mianji) || 0
           签约面积
         %li.list-group-item
-          %span.badge= current_log.try(:qianyue_jine, 0) 
+          %span.badge= current_log.try(:qianyue_jine) || 0 
           签约金额
         %li.list-group-item
           %span.badge= current_app.hushu 

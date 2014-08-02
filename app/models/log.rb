@@ -16,4 +16,8 @@ class Log < ActiveRecord::Base
   belongs_to :app
   belongs_to :client
   has_one :sms
+
+  def avg_jine
+    (self.qianyue_jine / self.qianyue_mianji.to_f).to_i
+  end
 end

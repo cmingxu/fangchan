@@ -3,13 +3,13 @@
     %tr
       %td 本日销售
       %td 
-        %strong= current_log.try(:xiaoding, 0)
+        %strong= current_log.try(:xiaoding) || 0
         套
 
     %tr
       %td 总共销售
       %td 
-        %strong 3
+        %strong= current_app.try(:hushu_sold) || 0 
         套
     %tr
       %td 剩余销售
@@ -22,13 +22,13 @@
     %tr
       %td 本日面积
       %td 
-        %strong 3
+        %strong= current_log.try(:qianyue_mianji) || 0
         ㎡
 
     %tr
       %td 总售面积
       %td 
-        %strong 3
+        %strong= current_app.try(:mianji_sold) || 0
         ㎡
     %tr
       %td 剩余面积
@@ -41,35 +41,34 @@
     %tr
       %td 本日金额
       %td 
-        %strong 3
-        万
+        %strong= (current_log.try(:qianyue_jine) || 0).in_human_readable_money
+        
 
     %tr
       %td 总售金额
       %td 
-        %strong 3
-        万
+        %strong= (current_app.try(:money_sold) ||  0).in_human_readable_money
+        
     %tr
       %td 剩余金额
       %td 
-        %strong= current_app.remain_jine
-        万
+        %strong= current_app.remain_jine.in_human_readable_money
 
 .col-md-3
   %table.table.table-condensed
     %tr
       %td 本日均价
       %td 
-        %strong 3
+        %strong= current_log.avg_jine.in_human_readable_money
         元
 
     %tr
       %td 总共均价
       %td 
-        %strong 3
+        %strong= current_app.avg_jine.in_human_readable_money
         元
     %tr
       %td 剩余均价
       %td 
-        %strong 3
+        %strong= current_app.remain_avg_jine.in_human_readable_money
         元

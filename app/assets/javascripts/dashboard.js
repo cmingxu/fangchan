@@ -100,7 +100,7 @@ $(document).ready(function () {
     dom: $("#count_charts"),
     title: "户数销售率",
     tooltip: '{series.name}: <b>{point.percentage:.1f}%</b>',
-    data: [["售出", 10], ["未售", 20]],
+    data: [["售出", hushu_sold], ["未售", hushu_remain]],
     name: "销售套数"
   });
 
@@ -108,7 +108,7 @@ $(document).ready(function () {
     dom: $("#area_charts"),
     title: "面积销售率",
     tooltip: '{series.name}: <b>{point.percentage:.1f}%</b>',
-    data: [["售出", 20], ["未售", 20]],
+    data: [["售出", mianji_sold], ["未售", mianji_remain]],
     name: "销售套数"
   });
 
@@ -116,7 +116,7 @@ $(document).ready(function () {
     dom: $("#money_charts"),
     title: "金额销售率",
     tooltip: '{series.name}: <b>{point.percentage:.1f}%</b>',
-    data: [["售出", 10], ["未售", 20]],
+    data: [["售出", money_sold], ["未售", money_remain]],
     name: "销售套数"
   });
 

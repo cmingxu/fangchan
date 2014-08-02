@@ -20,12 +20,36 @@ class App < ActiveRecord::Base
     self.logs.last
   end
 
+  def mianji_sold
+    self.logs.sum(:qianyue_mianji)
+  end
+
+  def hushu_sold
+    self.logs.sum(:qianyue)
+  end
+
+  def money_sold
+    self.logs.sum(:qianyue_jine)
+  end
+
   def remain_jine
+    self.zongjia - self.money_sold
   end
 
   def remain_hushu
+    self.hushu - self.hushu_sold
   end
 
   def remain_mianji
+    self.mianji - self.mianji_sold
+  end
+
+
+  def avg_jine
+    (self.money_sold / self.mianji_sold.to_f).to_i
+  end
+
+  def remain_avg_jine
+    (self.remain_jine / self.remain_mianji.to_f).to_i
   end
 end
