@@ -21,15 +21,15 @@ class App < ActiveRecord::Base
   end
 
   def mianji_sold
-    self.logs.sum(:qianyue_mianji)
+    self.logs.sum(:qianyue_mianji) || 0
   end
 
   def hushu_sold
-    self.logs.sum(:qianyue)
+    self.logs.sum(:qianyue) || 0
   end
 
   def money_sold
-    self.logs.sum(:qianyue_jine)
+    self.logs.sum(:qianyue_jine) || 0
   end
 
   def remain_jine
@@ -44,12 +44,15 @@ class App < ActiveRecord::Base
     self.mianji - self.mianji_sold
   end
 
-
   def avg_jine
     (self.money_sold / self.mianji_sold.to_f).to_i
+  rescue
+     0
   end
 
   def remain_avg_jine
+    return 0 unless self.remain_jine
+    return 0 unless self.remain_mianji
     (self.remain_jine / self.remain_mianji.to_f).to_i
   end
 end
