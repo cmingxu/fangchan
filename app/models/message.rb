@@ -15,4 +15,9 @@ class Message < ActiveRecord::Base
       self.errors.add(:base, "手机号码格式不正确") if !(m.strip =~ MOBILE_NUM_REG)
     end
   end
+
+  def sent!
+    self.sent = true
+    self.save
+  end
 end

@@ -4,7 +4,11 @@ Rails.application.routes.draw do
   get 'settings' => "settings#index"
 
   resources :logs, :only => [:new, :create]
-  resources :messages
+  resources :messages do
+    member do
+      put :mark_sent
+    end
+  end
   resources :users, :only => [:create, :update] do
     collection do
       put :change_pass

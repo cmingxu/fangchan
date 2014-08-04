@@ -8,6 +8,8 @@ class CreateSms < ActiveRecord::Migration
       t.integer :log_id
       t.integer :app_id
       t.integer :client_id
+      t.boolean :sent
+    
 
       t.timestamps
     end
