@@ -4,8 +4,13 @@ Rails.application.routes.draw do
   get 'settings' => "settings#index"
 
   resources :logs, :only => [:new, :create]
-  resources :smses, :only => [:new, :create]
-  resources :users, :only => [:create, :update]
+  resources :messages
+  resources :users, :only => [:create, :update] do
+    collection do
+      put :change_pass
+      put :change_name
+    end
+  end
   resources :apps, :only => [:create, :update] do
     member do
       put :switch

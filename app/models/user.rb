@@ -23,7 +23,7 @@ class User < ActiveRecord::Base
 
   private
   def handle_password_change
-    self.encrypted_password = self.class.encrypt_password(self.password)
+    self.encrypted_password = self.class.encrypt_password(self.password) if self.password.present?
   end
 
   def password_confirmation_same_as_password

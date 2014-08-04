@@ -5,14 +5,18 @@
 
   .row
     .col-md-12.setting_form.text-center
-      = form_tag settings_path, :role => "form"  do |f|
+      = form_tag change_pass_users_path, :role => "form", :method => :put  do |f|
+        %dl.dl-horizontal
+          %dt 当前密码:
+          %dd= text_field_tag "user[pass]", '', :placeholder => "当前密码", :class => "form-control"
+
         %dl.dl-horizontal
           %dt 新密码:
-          %dd= text_field_tag "app[hushu]", '', :placeholder => "总户数", :class => "form-control"
+          %dd= text_field_tag "user[new_pass]", '', :placeholder => "新密码", :class => "form-control"
   
         %dl.dl-horizontal
           %dt 密码确认:
-          %dd= text_field_tag "app[mianji]", '', :placeholder => "总面积", :class => "form-control"
+          %dd= text_field_tag "user[new_pass_confirmation]", '', :placeholder => "再次输入密码", :class => "form-control"
   
         = submit_tag "确认", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"
         %hr
@@ -20,20 +24,21 @@
 
   .row
     .col-md-12.setting_form.text-center
-      = form_tag settings_path, :role => "form"  do |f|
+      = form_tag change_name_users_path, :role => "form", :method => :put  do |f|
         %dl.dl-horizontal
           %dt 姓名:
-          %dd= text_field_tag "app[hushu]", '', :placeholder => "总户数", :class => "form-control"
+          %dd= text_field_tag "user[name]", '', :placeholder => "姓名", :class => "form-control"
   
         = submit_tag "确认", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"
         %hr
 
-  .row
-    .col-md-12.setting_form.text-center
-      = form_tag settings_path, :role => "form"  do |f|
-        %dl.dl-horizontal
-          %dt 头像:
-          %dd= text_field_tag "app[hushu]", '', :placeholder => "总户数", :class => "form-control"
-  
-        = submit_tag "确认", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"
-        %hr
+  .hide
+    .row
+      .col-md-12.setting_form.text-center
+        = form_tag settings_path, :role => "form"  do |f|
+          %dl.dl-horizontal
+            %dt 头像:
+            %dd= text_field_tag "app[hushu]", '', :placeholder => "总户数", :class => "form-control"
+    
+          = submit_tag "确认", :class => "btn btn-success btn-lg btn_submit", :id => "submit_btn"
+          %hr

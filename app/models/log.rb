@@ -15,9 +15,13 @@ class Log < ActiveRecord::Base
   belongs_to :user
   belongs_to :app
   belongs_to :client
-  has_one :sms
+  has_one :message
 
   def avg_jine
     (self.qianyue_jine / self.qianyue_mianji.to_f).to_i
+  end
+
+  def message_content
+   "领导， 今日小定#{self.xiaoding}套， 签约#{self.qianyue}套， 销售面积#{self.qianyue_mianji}平米，销售额#{self.qianyue_jine.in_human_readable_money}."
   end
 end

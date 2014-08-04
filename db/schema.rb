@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20140724140604) do
     t.datetime "updated_at"
   end
 
-  create_table "sms", force: true do |t|
+  create_table "messages", force: true do |t|
     t.text     "content"
     t.text     "mobile_num"
     t.integer  "user_id"

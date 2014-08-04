@@ -11,6 +11,7 @@ class App < ActiveRecord::Base
   has_many :logs
   has_many :users
   belongs_to :client
+  has_many :messages
 
   def zongjia
     self.mianji * self.junjia 
@@ -55,4 +56,5 @@ class App < ActiveRecord::Base
     return 0 unless self.remain_mianji
     (self.remain_jine / self.remain_mianji.to_f).to_i
   end
+
 end

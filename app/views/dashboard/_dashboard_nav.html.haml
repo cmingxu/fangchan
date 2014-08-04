@@ -7,11 +7,18 @@
     系统设置
     .glyphicon.glyphicon-wrench
 
-  %a.btn.btn-default.pull-right{:href => new_smse_path}
+  %a.btn.btn-default.pull-right{:href => new_message_path}
     短信汇报
     .glyphicon.glyphicon-send
 
   %a.btn.btn-danger.pull-right{:href => new_log_path}
     新建报表
     .glyphicon.glyphicon-arrow-down
+
+
+
+- if flash[:notice].present?
+  .control-group
+    .alert.alert-danger
+      = flash[:notice]
 
